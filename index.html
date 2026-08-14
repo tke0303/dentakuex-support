@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電卓EX — サポートページ</title>
+<style>
+:root{
+  --bg:#0f0f11; --card:#1c1c1e; --line:#2c2c2e;
+  --text:#e8e8ea; --sub:#8e8e93; --accent:#5E5CE6; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.85;font-size:16px;
+}
+header{text-align:center;padding:56px 24px 44px;border-bottom:1px solid var(--line)}
+.icon{width:88px;height:88px;border-radius:20px;background:#000;display:inline-grid;
+  grid-template-columns:1fr 1fr;gap:6px;padding:12px;margin-bottom:18px}
+.icon div{border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:600}
+.k1{background:#F0A020;color:#fff}.k2{background:#E8E8EA;color:#111}
+.k3{background:#E8E8EA;color:#111}.k4{background:var(--accent);color:#fff}
+header h1{font-size:1.6rem;font-weight:600;margin-bottom:6px}
+header p{color:var(--sub);font-size:.95rem}
+.container{max-width:720px;margin:0 auto;padding:0 20px 80px}
+h2{font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--white)}
+h3{font-size:.98rem;font-weight:600;margin:22px 0 6px}
+p{margin-bottom:14px}
+ul{margin:0 0 14px;padding-left:1.3em}
+li{margin-bottom:7px}
+.card{background:var(--card);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+.step{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+.num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);
+  color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.warn{background:rgba(240,160,32,.12);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.warn strong{color:#F0A020}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+  padding:14px 28px;border-radius:12px;font-weight:600;margin:8px 0}
+a{color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:28px 20px 60px;text-align:center;
+  color:var(--sub);font-size:.85rem}
+footer a{margin:0 10px}
+@media (prefers-color-scheme:light){
+  :root{--bg:#fff;--card:#f2f2f7;--line:#d8d8dc;--text:#1c1c1e;--sub:#6c6c70;--white:#000}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="icon"><div class="k1">+</div><div class="k2">−</div><div class="k3">×</div><div class="k4">÷</div></div>
+  <h1>電卓EX</h1>
+  <p>消費税もGTも使える電卓 ／ 見られたくない写真と動画を、その裏に</p>
+</header>
+
+<div class="container">
+
+<h2>使い方</h2>
+
+<h3>アルバムを開く</h3>
+<div class="card">
+  <div class="step"><div class="num">1</div><div>電卓の画面で、決めた番号を入力します</div></div>
+  <div class="step"><div class="num">2</div><div>右下の ＝ を長押しします（約0.6秒）</div></div>
+  <p style="margin:0;color:var(--sub);font-size:.9rem">番号を間違えても何も起こりません。ただ計算結果が出るだけです。</p>
+</div>
+
+<h3>番号を忘れたとき</h3>
+<p>設定で「忘れたときのために Face ID でも開けるようにする」を有効にしている場合、<strong>AC を2秒長押し</strong>すると Face ID で開けます。</p>
+<div class="warn">
+  <p style="margin:0"><strong>共通の解除番号はありません。</strong>Face ID の予備鍵を無効にしたまま番号を忘れると、開く方法はありません。開発者にも復元できません。</p>
+</div>
+
+<h2>データについて</h2>
+<p>保存した写真・動画・書類は AES-256-GCM で暗号化してから保存されます。復号に必要な鍵は端末のキーチェーンにのみ保存され、開発者にも Apple にも中身は読めません。</p>
+<p>圧縮も変換もしていません。HEIC は HEIC のまま、4K 動画は 4K のまま保存され、書き出すときも元の形式で戻ります。</p>
+<p><strong>サブスクリプションを解約したあとも、閲覧と書き出しはいつでもできます。</strong>停止するのは、新しいデータの追加・アルバムの整理・iCloud への同期です。</p>
+
+<h2>機種変更するとき</h2>
+<p>iCloud へのバックアップを有効にしていれば、新しい端末でアプリを入れて同じ番号を入力するだけで戻ります。旧端末は必要ありません。</p>
+<div class="warn">
+  <p style="margin:0"><strong>iCloud キーチェーンを有効にしておいてください。</strong>復号の鍵はここを通じて引き継がれます。無効のまま機種変更すると、新しい端末でデータを開けなくなります。</p>
+</div>
+
+<h2>隠せない場所</h2>
+<p>iOS の仕組み上、次の2か所にはアプリ名が表示されます。家族と同じ Apple ID を使っている場合はご注意ください。</p>
+<ul>
+  <li>「設定」→ Apple ID →「サブスクリプション」</li>
+  <li>「設定」→ Apple ID →「iCloud」→「ストレージを管理」</li>
+</ul>
+
+<h2>よくある質問</h2>
+
+<h3>解約したらデータは消えますか</h3>
+<p>消えません。閲覧と書き出しはそのまま続けられます。</p>
+
+<h3>取り込むと元の写真は消えますか</h3>
+<p>設定によります。既定は毎回確認です。削除を選んでも、本体の「最近削除した項目」に30日間残るので戻せます。</p>
+
+<h3>同じ写真を2回入れたらどうなりますか</h3>
+<p>中身が同じものは追加されません。「保存済みだったので追加しませんでした」と表示されます。</p>
+
+<h3>削除したら iCloud からも消えますか</h3>
+<p>ゴミ箱に入れただけなら残ります（30日間）。「完全に削除」を選んだ時点で、iCloud からも他の端末からも消えます。</p>
+
+<h3>写真ライブラリを見られていませんか</h3>
+<p>見ていません。取り込みには、選んだものだけを渡す仕組みを使っています。写真へのアクセス許可を求めるのは、元のデータを削除するときと、書き出すときだけです。</p>
+
+<h2>お問い合わせ</h2>
+<p>ご要望・不具合のご報告はこちらからお願いします。</p>
+<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdyjrQpESWQ16qA_Sr518rQDEyRqaip7BcQKFQJ4rjddSZQ_Q/viewform">お問い合わせフォーム</a>
+
+</div>
+
+<footer>
+  <a href="privacy.html">プライバシーポリシー</a>・<a href="terms.html">利用規約</a>
+  <p style="margin-top:10px">© 2026 電卓EX</p>
+</footer>
+
+</body>
+</html>
